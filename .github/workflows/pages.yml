@@ -1,0 +1,44 @@
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - article.md
+      - .github/workflows/pages.yml
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+      - name: Build site
+        run: |
+          mkdir -p _site
+          cp .github/style.css _site/style.css
+
+          pandoc article.md \
+            --from=gfm \
+            --to=html5 \
+            --standalone \
+            --css=style.css \
+            --highlight-style=pygments \
+            --metadata pagetitle="Curry-Howard in Rust: Proving Gauss's Theorem with the Type System" \
+            --output=_site/index.html
