@@ -1,6 +1,6 @@
 # Curry-Howard in Rust: Proving Gauss's Theorem with the Type System
 
-08/2026
+08/2026 - [source](https://github.com/Garfield1002/curryhoward)
 
 ## Introduction
 
