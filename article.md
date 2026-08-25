@@ -1,13 +1,15 @@
-# Curry-Howard in Rust: Proving Gauss's Theorem with the Type System
+# Abusing Rust's Type System to Understand Lean
 
 08/2026 - [source](https://github.com/Garfield1002/curryhoward)
 
 ## Introduction
 
-The **[Curry-Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence)** tells us we can write proofs using code,
-more specifically, using a strong type system.
+I wrote this because proof assistants like Lean seem to be coming up more often, particularly around AI-assisted mathematics.
+However the computer science behind mechanised proofs gets less attention.
+The core result is the **[Curry-Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence)**.
+It tells us we can write proofs using code, more specifically, using a strong type system.
 But can we ?
-I hear rust has a strong type system..
+I hear Rust has a strong type system..
 
 ## Using Rust to prove things
 

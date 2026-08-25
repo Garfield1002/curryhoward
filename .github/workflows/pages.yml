@@ -41,7 +41,7 @@ jobs:
             --standalone \
             --css=style.css \
             --highlight-style=pygments \
-            --metadata pagetitle="Curry-Howard in Rust: Proving Gauss's Theorem with the Type System" \
+            --metadata pagetitle="Abusing Rust's Type System to Understand Lean" \
             --output=_site/index.html
 
       - name: Configure GitHub Pages
